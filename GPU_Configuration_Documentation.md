@@ -389,6 +389,8 @@ mkdir -p "$LOG_DIR/$DATE_DIR"
     sudo docker compose down
     sudo docker compose up -d
 
+    sudo docker images -q --filter "dangling=true" | xargs sudo docker rmi
+
     END_TIME=$(date +"%Y-%m-%d %H:%M:%S")
     END_SECONDS=$(date +%s)
     ELAPSED_TIME=$((END_SECONDS - START_SECONDS))
