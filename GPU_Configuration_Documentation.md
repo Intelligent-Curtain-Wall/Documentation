@@ -374,22 +374,33 @@ export TZ="Asia/Shanghai"
 TIMESTAMP=$(date +"%Y%m%d-%H:%M")
 START_TIME=$(date +"%Y-%m-%d %H:%M:%S")
 START_SECONDS=$(date +%s)
-DATE_DIR=$(date +"%Y-%m-%d")
 
-mkdir -p "$LOG_DIR/$DATE_DIR"
+mkdir -p "$LOG_DIR"
 
 {
     echo "Execution Start Time: $START_TIME"
 
     cd /home/mat/Intelligent_Curtain_Wall
 
-    sudo docker images -q --filter "dangling=true" | xargs sudo docker rmi
+    imagesbefore=$(sudo docker images -q --filter "dangling=true")
+    if [ -n "$imagesbefore" ]; then
+        echo "Removing dangling images..."
+        sudo docker rmi $imagesbefore
+    else
+        echo "No dangling images to remove."
+    fi
 
     sudo docker compose pull
     sudo docker compose down
     sudo docker compose up -d
 
-    sudo docker images -q --filter "dangling=true" | xargs sudo docker rmi
+    imagesafter=$(sudo docker images -q --filter "dangling=true")
+    if [ -n "$imagesafter" ]; then
+        echo "Removing dangling images..."
+        sudo docker rmi $imagesafter
+    else
+        echo "No dangling images to remove."
+    fi
 
     END_TIME=$(date +"%Y-%m-%d %H:%M:%S")
     END_SECONDS=$(date +%s)
@@ -397,7 +408,7 @@ mkdir -p "$LOG_DIR/$DATE_DIR"
 
     echo "Execution End Time: $END_TIME"
     echo "Total Execution Time: $ELAPSED_TIME seconds"
-} &> "$LOG_DIR/$DATE_DIR/$TIMESTAMP.txt"
+} &> "$LOG_DIR/$TIMESTAMP.txt"
 ```
 
 ## 配置 `mat` 用户权限
