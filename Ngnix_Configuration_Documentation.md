@@ -1,7 +1,7 @@
 # 腾讯云 Ngnix 配置文档
 
 > [!TIP]
-> 腾讯云轻量应用服务器镜像：Debian12-Docker26
+> 服务器镜像已保存为 ICW-Proxy-Environment-20250317
 
 ## 配置服务器防火墙
 
@@ -218,4 +218,31 @@ docker --version
 ```bash
 sudo docker pull minmuslin/intelligent-curtain-wall:oss-management
 sudo docker run -d -p 9000:8080 --name oss-management minmuslin/intelligent-curtain-wall:oss-management
+```
+
+## 配置 SSH 密钥
+
+生成 SSH 密钥对：
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "minmuslin@outlook.com"
+```
+
+将公钥添加到 `~/.ssh/authorized_keys`：
+
+```bash
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+```
+
+确保权限正确：
+
+```bash
+chmod 600 ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+```
+
+复制私钥内容：
+
+```bash
+cat ~/.ssh/id_rsa
 ```
