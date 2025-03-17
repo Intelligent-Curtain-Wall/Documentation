@@ -1,7 +1,7 @@
 # 矩池云 GPU 环境配置文档
 
 > [!TIP]
-> 服务器环境已保存为 ICW-Environment
+> 服务器环境已保存为 ICW-Matpool-Environment-20250317
 
 ## 租用配置与硬件信息
 
@@ -425,12 +425,12 @@ sudo visudo
 mat ALL=(ALL) NOPASSWD: ALL
 ```
 
-## 配置通过 GitHub Actions 触发远程部署
+## 配置 SSH 密钥
 
 生成 SSH 密钥对：
 
 ```bash
-ssh-keygen -t rsa -b 4096 -C "github-actions"
+ssh-keygen -t rsa -b 4096 -C "minmuslin@outlook.com"
 ```
 
 将公钥添加到 `~/.ssh/authorized_keys`：
