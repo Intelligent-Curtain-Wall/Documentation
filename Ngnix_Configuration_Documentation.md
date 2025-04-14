@@ -1,7 +1,7 @@
 # 腾讯云 Ngnix 配置文档
 
 > [!TIP]
-> 服务器镜像已保存为 ICW-Proxy-Environment-20250317
+> 服务器镜像已保存为 ICW-Proxy-Environment
 
 ## 配置服务器防火墙
 
