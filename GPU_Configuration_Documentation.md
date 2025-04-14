@@ -1,7 +1,7 @@
 # 矩池云 GPU 环境配置文档
 
 > [!TIP]
-> 服务器环境已保存为 ICW-Matpool-Environment-20250317
+> 服务器环境已保存为 ICW-Matpool-Environment
 
 ## 租用配置与硬件信息
 
