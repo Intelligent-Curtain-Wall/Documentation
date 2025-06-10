@@ -9,6 +9,20 @@
 
 ![](assets/2024-11-24_14-32-08.png)
 
+## 配置 Git LFS
+
+安装 Git LFS：
+
+```bash
+sudo apt-get install git-lfs
+```
+
+初始化 Git LFS：
+
+```bash
+git lfs install
+```
+
 ## 配置 Anaconda
 
 在用户目录下载并安装 Anaconda：
