@@ -173,6 +173,40 @@ sudo nginx -t
 sudo systemctl restart nginx
 ```
 
+## 配置客户端请求体最大允许大小
+
+编辑 `/etc/nginx/nginx.conf` 文件：
+
+```bash
+sudo nano /etc/nginx/nginx.conf
+```
+
+配置客户端请求体最大允许大小（0 表示无限制）：
+
+```
+http {
+    ...
+
+    client_max_body_size 0;
+
+    ...
+}
+```
+
+测试 Nginx 配置文件正确性：
+
+```bash
+sudo nginx -t
+```
+
+![](assets/2024-12-04_14-49-47.png)
+
+重启 Nginx 服务：
+
+```bash
+sudo systemctl restart nginx
+```
+
 ## 配置数据集管理平台
 
 将数据集管理平台部署文件上传至 `/home/lighthouse/userinterface` 文件夹。
