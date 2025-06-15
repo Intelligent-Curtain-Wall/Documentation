@@ -21,9 +21,6 @@ Dockerfile 编写指南
 * [Git Basic Usage Documentation](Git_Basic_Usage_Documentation.md)
 Git 基本使用文档
 
-* [Meeting Minutes](Meeting_Minutes.md)
-会议纪要
-
 * [Ngnix Configuration Documentation](Ngnix_Configuration_Documentation.md)
 腾讯云 Ngnix 配置文档
 
@@ -32,9 +29,3 @@ Git 基本使用文档
 
 * [OSS Controller API Documentation](OSS_Controller_API_Documentation.md)
 OSS 控制器 API 文档
-
-* [System Architecture and Implementation of Dataset Management Platform Presentation](System_Architecture_and_Implementation_of_Dataset_Management_Platform_Presentation.pdf)
-智慧幕墙数据集管理平台系统架构与实现汇报
-
-* [System Architecture and Server Operations and Maintenance Presentation](System_Architecture_and_Server_Operations_and_Maintenance_Presentation.pdf)
-智慧幕墙系统架构与服务器运维汇报
