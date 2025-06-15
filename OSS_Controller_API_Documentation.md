@@ -24,11 +24,10 @@ OSS 控制器 API 提供文件的上传与下载功能，通过 HTTP 请求与�
 
 * **成功**：返回文件的二进制数据，同时响应头包含文件下载的必要信息。
   * **HTTP 状态码**：`200 OK`
-  * **响应头**：
-    * `Content-Disposition: attachment; filename=<文件名>`
+  * **响应头**：`Content-Disposition: attachment; filename=<文件名>`
   * **响应体**：文件的二进制内容
 * **失败**：返回 HTTP 错误状态码。
-  * **`404 Not Found`**: 文件不存在。
+  * **`404 Not Found`**：文件不存在。
 
 ## 上传文件
 
@@ -56,21 +55,15 @@ OSS 控制器 API 提供文件的上传与下载功能，通过 HTTP 请求与�
 
 * **成功**：返回文件的下载链接。
   * **HTTP 状态码**：200 OK
-  * **响应体**：
-
-    ```json
-    {
-        "downloadUrl": "http://<服务域名>/oss/download/<文件路径>"
-    }
-    ```
+  * **响应体**：`{ "downloadUrl": "http://<服务域名>/oss/download/<文件路径>" }`
 
 * **失败**：返回 HTTP 错误状态码及错误信息。
-  * **`401 Unauthorized`**: 身份验证失败。
-  * **`400 Bad Request`**: 对象键格式无效（如路径或文件名非法）。
-  * **`500 Internal Server Error`**: 文件上传失败。
+  * **`401 Unauthorized`**：身份验证失败。
+  * **`400 Bad Request`**：对象键格式无效（如路径或文件名非法）。
+  * **`500 Internal Server Error`**：文件上传失败。
 
 ### 验证规则
 
 * 目录部分（路径中的每一层目录）只能包含字母、数字和 `-`。
 * 文件名部分只能包含字母、数字、`.` 和 `-`。
-* 不允许使用连续的斜杠（ `//` ）。
+* 不允许使用连续的斜杠（`//`）。
