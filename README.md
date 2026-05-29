@@ -6,6 +6,9 @@ Project-related Documentation
 
 ## 目录
 
+* [frontend_deployment_documentation](Overall_Project_Document/frontend_deployment_documentation.md)
+服务器前端部署文档
+
 * [CI/CD Pipeline Documentation](CI_CD_Pipeline_Documentation.md)
 CI/CD 工作流文档
 
